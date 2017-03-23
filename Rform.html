@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- use bootstrap -->
+<h1>My Garage</h1>
+<h3>Add a vehicle below.</h3> <br>
+
+<br><br>
+
+<form action = 'dmz.php'>
+
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript">
+function vehicleAdd()
+{
+	var make = document.getElementById("make")
+	var model = document.getElementById("model")
+	var year = document.getElementById("year")
+	var trim = document.getElementById("trim")
+	$.get("dmz.php");
+}
+</script>
+
+ Select Make:
+ 
+  <select name = 'Make' id="make">
+	<option value = 'Audi'>Audi</option>
+	<option value = 'Bentley'>Bentley</option>
+	<option value = 'Cadillac'>Cadillac</option>
+	<option value = 'Dodge'>Dodge</option>
+  </select>
+ 
+  <br><br>
+ 
+ Select Model:
+  <select name = 'Model' id="model">
+	<option value = 'TT'>TT</option>
+	<option value = 'Continental GT'>Continental</option>
+	<option value = 'Escalade'>Escalade</option>
+	<option value = 'Durango'>Durango</option>
+  </select>
+  
+  <br><br>
+  
+ 
+ Select Year:
+ 
+  <select name = 'Year' id="year">
+	<option value = '2017'>2017</option>
+	<option value = '2016'>2016</option>
+	<option value = '2015'>2015</option>
+	<option value = '2014'>2014</option>
+  </select>
+  <br><br>
+  
+  Select Trim:
+ 
+  <select name = 'Trim' id="trim">
+	<option value = 'LS'>LS</option>
+	<option value = 'ES'>ES</option>
+	<option value = 'LX'>LX</option>
+	<option value = 'SC'>SC</option>
+  </select>
+  <br><br>
+  <input type = button name="AddVehicle" value="Add Vehicle" onclick="vehicleAdd()">
+ </form>
+ 
+ 
+ 
+ 

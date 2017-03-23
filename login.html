@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<?php
+include ("account.php"); //Micky's account.php
+include ("Rform.html");
+
+session_start();
+
+($dbh = mysql_connect ($hostname, $username, $password))
+	        or die ("Unable to connect to MySQL database");
+print "Connected to MySQL<br><br>";
+mysql_select_db($project);
+
+//listen for login request
+
+if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
+{
+    //returning users, let the user access the main page Rform.html
+	?>
+	<?=$_SESSION['Username']?> <?=$_SESSION['EmailAddress']?>
+	<?php
+}
+elseif(!empty($_POST['username']) && !empty($_POST['password']))
+{
+    // let the user login and go to Rform.html
+	$username = mysql_real_escape_string($_POST['username']);
+    $password = mysql_real_escape_string($_POST['password']);
+
+	$checklogin = mysql_query("SELECT * FROM users WHERE Username = '".$username."' AND Password = '".$password."'");
+	
+	if(mysql_num_rows($checklogin) == 1)
+    {
+        $row = mysql_fetch_array($checklogin);
+        $email = $row['EmailAddress'];
+         
+        $_SESSION['Username'] = $username;
+        $_SESSION['EmailAddress'] = $email;
+        $_SESSION['LoggedIn'] = 1;
+         
+        echo "<h1>Success</h1>";
+        echo "<meta http-equiv='refresh' content='=2;Rform.html' />";
+    }
+    else
+    {
+        echo "<h1>Error</h1>";
+        echo "<p>Sorry, your account could not be found. Please <a href=\"Rform.html\">click here to try again</a>.</p>";
+    }
+}
+else
+{
+    // transfer back to front end login page
+	
+	<form method="post" action="index.php" name="loginform" id="loginform">
+    <fieldset>
+        <label for="username">Username:</label><input type="text" name="username" id="username" /><br />
+        <label for="password">Password:</label><input type="password" name="password" id="password" /><br />
+        <input type="submit" name="login" id="login" value="Login" />
+    </fieldset>
+    </form>
+}
+
+/*Create user 
+
+Get login request, process login request, send login request to database and check if user in database
+
+Get make/model/year garage table, sql select make/model/year from sql table, send the sql back to garage
+
+*Get service center results from Google maps based on make
+
+Separate queries for creating user, adding vehicles to the user's garage, user permissions for car forum they own*/
+
+?>
