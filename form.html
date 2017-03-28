@@ -1,0 +1,58 @@
+<style>
+
+fieldset { width: 30% ;  }
+.A  { background: #FFFF00; width: 125px; float: left; }
+.B  { background: #FFFF00; width: 80px; float: right; } 
+.C  { background: #FFFF00; width: 10px; float: right; } 
+
+ </style>
+
+<script>
+
+function password(){
+   
+    ptr1 = document.getElementById("password1")
+    ptr2 = document.getElementById("password2")
+    if (ptr1.value != ptr2.value){
+       alert("Passwords must match! Please Try again")
+       ptr2.value = "" 
+    }else{}
+}
+
+
+</script>
+
+<body><form   action  = "main.php" >
+
+<fieldset> <legend align="center"> REGISTRATION FORM </legend>
+
+
+<label class="A">User Name</label> 
+<input type = text name="user" placeholder="User Name" id="user" autocomplete="off" ><br><br>  
+         
+<label class="A">Password</label>      
+<input type = text name="password1" placeholder="This will be your Password" id="password1" autocomplete="off" required="" ><br><br> 
+       
+<label class="A">Confirm Password</label> 
+<input type = text name="password2" placeholder="Confirm Password" id="password2" onblur="password()" autocomplete="off" required=""  ><br><br>  
+         
+<label class="A">Email Address</label>
+<input type = text name="email" id="email" autocomplete="off" ><br><br>  
+       
+<label class="A">Full Name</label>
+<input type = text name="fullname" id="fullname" autocomplete="off" ><br><br>  
+        
+<label class="A">Cell</label>
+<input type = text name="cell" id="cell" autocomplete="off" ><br><br>    
+               
+<label class="A">Address</label>
+<input type = text name="address" id="address" autocomplete="off" ><br><br>             
+           
+<input  type = submit     >	<br><br>	   
+		   
+<label class="A">Would you Like an Email Copy?</label> 
+<input name="emailcopy" type="checkbox">
+
+</fieldset>
+</form></body>
+
