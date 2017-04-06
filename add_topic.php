@@ -1,5 +1,5 @@
 <?php
-include("Rform.html");
+include("create_topic");
 
 $host="sql2.njit.edu"; // Host name 
 $username="mjs232"; // Mysql username 
@@ -30,4 +30,4 @@ else {
 echo "ERROR";
 }
 mysql_close();
-?>
+?>*/

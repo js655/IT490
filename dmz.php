@@ -1,32 +1,36 @@
 <?php
 include("account.php");
-include("login.php");
-include("Rform.html");
+include("login.html");
 
-($dbh = mysql_connect ($hostname, $username, $password))
-	        or die ("Unable to connect to MySQL database");
-print "Connected to MySQL<br><br>";
-mysql_select_db($project);
+echo "Starting DBH";
 
-<?php
-	$make = $_GET["Make"]
-	$model = $_GET["Model"]
-	$year = $_GET["Year"]
-	$trim = $_GET["Trim"]
+//($dbh = mysql_connect ($hostname, $username, $password))
+//	        or die ("Unable to connect to MySQL database");
+//($dbh->select_db($project))
+
+echo "Connected";
+
+//mysql_select_db($project);
+
+	$make = $_GET["Make"];
+	$model = $_GET["Model"];
+	$year = $_GET["Year"];
+	$trim = $_GET["Trim"];
 	
-	$button = $_GET["button.get"]
+	$button = $_GET["button.get"];
 	
 	$car = "$make $model $year $trim";
-    $mysqli = new mysqli("sql2.njit.edu", "mjs232", "ZtCtJq5D", "mjs232");
-	//add vehicle
-	if $button = 
+//    $dbh = mysql_connect("sql2.njit.edu", "mjs232", "ZtCtJq5D");
 	
-	$customer = $mysqli->query("USE customers");
-	$update = $mysqli->query("UPDATE customers SET vehicle="$car"");
-	$result = $mysqli->query("SELECT FROM vehicles WHERE user="$user"");
-?>
+//	$customer = $mysqli->query("USE customers");
+//	$update = $mysqli->query("UPDATE customers SET vehicle=$car");
+//	$result = $mysqli->query("SELECT FROM vehicles WHERE user=$user");
 
-//$ch = curl_init("192.168.20.15");
-//$fp = fopen("");
+//	echo json_encode($result);
+
+//$ch = curl_init('192.168.20.15');
+//$result = curl_exec($ch);
+
+echo "Done";
 
 ?>
