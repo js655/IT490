@@ -1,5 +1,6 @@
 <?php
 include("Rform.html");
+include("add_topic.php");
 
 $host="localhost"; // Host name 
 $username=""; // Mysql username 

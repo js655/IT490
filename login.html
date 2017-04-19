@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
-include ("account.php"); //Micky's account.php
+
+include ("account.php"); //Mickys account.php
 include ("Rform.html");
 
 session_start();
@@ -15,9 +16,10 @@ mysql_select_db($project);
 if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
 {
     //returning users, let the user access the main page Rform.html
-	?>
-	<?=$_SESSION['Username']?> <?=$_SESSION['EmailAddress']?>
-	<?php
+	
+	$_SESSION['Username'];
+	$_SESSION['EmailAddress'];
+	
 }
 elseif(!empty($_POST['username']) && !empty($_POST['password']))
 {
@@ -25,7 +27,7 @@ elseif(!empty($_POST['username']) && !empty($_POST['password']))
 	$username = mysql_real_escape_string($_POST['username']);
     $password = mysql_real_escape_string($_POST['password']);
 
-	$checklogin = mysql_query("SELECT * FROM users WHERE Username = '".$username."' AND Password = '".$password."'");
+	$checklogin = mysql_query("SELECT * FROM users WHERE Username = .$username. AND Password = .$password.");
 	
 	if(mysql_num_rows($checklogin) == 1)
     {
@@ -57,15 +59,4 @@ else
     </fieldset>
     </form>
 }
-
-/*Create user 
-
-Get login request, process login request, send login request to database and check if user in database
-
-Get make/model/year garage table, sql select make/model/year from sql table, send the sql back to garage
-
-*Get service center results from Google maps based on make
-
-Separate queries for creating user, adding vehicles to the user's garage, user permissions for car forum they own*/
-
 ?>

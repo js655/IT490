@@ -33,7 +33,7 @@ include("Rform.html");
 <tr>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><input type="submit" name="Submit" value="Submit" /> <input type="reset" name="Submit2" value="Reset" /></td>
+<td><input type="submit" name="Submit" value="Submit" action="add_topic.php"/> <input type="reset" name="Submit2" value="Reset" /></td>
 </tr>
 </table>
 </td>
