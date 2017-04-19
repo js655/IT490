@@ -1,6 +1,5 @@
 <?php
 include("account.php");
-include("login.html");
 
 echo "Starting DBH";
 

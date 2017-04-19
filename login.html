@@ -39,12 +39,12 @@ elseif(!empty($_POST['username']) && !empty($_POST['password']))
         $_SESSION['LoggedIn'] = 1;
          
         echo "<h1>Success</h1>";
-        echo "<meta http-equiv='refresh' content='=2;Rform.html' />";
+        echo "<meta http-equiv='refresh' content='=2;garage.html' />";
     }
     else
     {
         echo "<h1>Error</h1>";
-        echo "<p>Sorry, your account could not be found. Please <a href=\"Rform.html\">click here to try again</a>.</p>";
+        echo "<p>Sorry, your account could not be found. Please <a href=\"login.html\">click here to try again</a>.</p>";
     }
 }
 else
