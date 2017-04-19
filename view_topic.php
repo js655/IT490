@@ -1,9 +1,9 @@
 <?php
 
-$host="localhost"; // Host name 
-$username=""; // Mysql username 
-$password=""; // Mysql password 
-$db_name="test"; // Database name 
+$host="sql2.njit.edu"; // Host name 
+$username="mjs232"; // Mysql username 
+$password="ZtCtJq5D"; // Mysql password 
+$db_name="mjs232"; // Database name 
 $tbl_name="forum_question"; // Table name 
 
 // Connect to server and select databse.
